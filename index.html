@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f7fb">
+<title>আকাইদ — MCQ Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+<header class="topbar">
+    <a class="icon-btn" href="../index.html" aria-label="Back">‹</a>
+    <div class="title">
+        <span>ISLAM MCQ QUIZ</span>
+        <h1>Chapter 1 — আকাইদ</h1>
+    </div>
+    <div class="top-actions"><button id="search-open" class="icon-btn" type="button" aria-label="Search">⌕</button><button id="theme-btn" class="icon-btn" type="button" aria-label="Theme">☼</button></div>
+</header>
+
+<section id="home-screen" class="screen">
+    <div class="hero-card">
+        <span class="badge">অধ্যায় ১</span>
+        <h2>আকাইদ MCQ Practice</h2>
+        <p>২৪০টি প্রশ্ন থেকে নিজের মতো practice করো। Progress, ভুল প্রশ্ন ও bookmark অটো-save হবে।</p>
+        <div class="stats">
+            <div><strong id="total-count">২৪০</strong><small>মোট প্রশ্ন</small></div>
+            <div><strong id="answered-count">০</strong><small>উত্তর দেওয়া</small></div>
+            <div><strong id="best-score">০%</strong><small>Best score</small></div>
+        </div>
+    </div>
+
+    <div class="mode-grid">
+        <button class="mode-card primary-mode" data-mode="all"><b>▶</b><span>সব প্রশ্ন</span><small>২৪০টি MCQ</small></button>
+        <button class="mode-card" data-mode="random"><b>🎲</b><span>Random Quiz</span><small>২০টি প্রশ্ন</small></button>
+        <button class="mode-card" data-mode="wrong"><b>✕</b><span>ভুল প্রশ্ন</span><small>শুধু ভুলগুলো</small></button>
+        <button class="mode-card" data-mode="bookmarks"><b>★</b><span>Bookmarks</span><small>Save করা প্রশ্ন</small></button>
+        <button class="mode-card" data-mode="review"><b>☷</b><span>Review</span><small>উত্তরগুলো দেখো</small></button>
+    </div>
+
+    <div class="tools-card">
+        <div class="section-title">Practice settings</div>
+        <label class="switch-row">
+            <span>Option shuffle</span>
+            <input id="shuffle-options" type="checkbox">
+        </label>
+        <label class="switch-row">
+            <span>Question shuffle</span>
+            <input id="shuffle-questions" type="checkbox">
+        </label>
+        <label class="switch-row">
+            <span>Instant answer feedback</span>
+            <input id="instant-feedback" type="checkbox" checked>
+        </label>
+        <button id="search-open-home" class="search-home-btn" type="button">⌕ প্রশ্ন খুঁজুন</button><button id="reset-progress" class="danger-link" type="button">সব progress reset</button>
+    </div>
+</section>
+
+<section id="quiz-screen" class="screen" hidden>
+    <div class="progress-info">
+        <span id="counter"></span>
+        <span id="percent"></span>
+    </div>
+    <div class="progress-track"><div id="progress" class="progress"></div></div>
+
+    <div class="quiz-card">
+        <div class="question-head">
+            <span id="mode-badge" class="badge">QUIZ</span>
+            <button id="bookmark-btn" class="bookmark-btn" type="button">☆</button>
+        </div>
+        <h2 id="question"></h2>
+        <div id="options" class="options"></div>
+        <div id="feedback" class="feedback" hidden></div>
+    </div>
+
+    <div class="quiz-actions">
+        <button id="prev" class="btn secondary" type="button">← আগের</button>
+        <button id="next" class="btn primary" type="button">পরের →</button>
+    </div>
+
+    <button id="navigator-toggle" class="navigator-toggle" type="button">প্রশ্ন তালিকা <span>⌄</span></button>
+    <div id="question-grid" class="question-grid" hidden></div>
+
+    <button id="home-from-quiz" class="text-btn" type="button">← Quiz menu</button>
+</section>
+
+<section id="result-screen" class="screen" hidden>
+    <div class="result-card">
+        <div class="result-check">✓</div>
+        <span class="eyebrow">QUIZ COMPLETE</span>
+        <h2>দারুণ! Quiz শেষ হয়েছে</h2>
+        <div class="score"><strong id="result-score">০/০</strong><span id="result-percent">০%</span></div>
+        <div class="result-stats">
+            <div><b id="result-correct">০</b><small>Correct</small></div>
+            <div><b id="result-wrong">০</b><small>Wrong</small></div>
+            <div><b id="result-unanswered">০</b><small>Unanswered</small></div>
+        </div>
+        <div class="result-actions">
+            <button id="retry" class="btn primary" type="button">আবার করো</button>
+            <button id="wrong-only" class="btn secondary" type="button">ভুলগুলো আবার</button>
+            <button id="back-home" class="btn secondary" type="button">Quiz menu</button>
+        </div>
+    </div>
+</section>
+
+<div id="search-panel" class="modal" hidden>
+    <div class="modal-card">
+        <div class="modal-head"><h3>প্রশ্ন খুঁজুন</h3><button id="close-search">×</button></div>
+        <input id="search-input" class="search-input" placeholder="যেমন: ইমান, তাওহিদ..." autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+    </div>
+</div>
+
+<footer>Islam MCQ Quiz • Chapter 1 — আকাইদ</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
